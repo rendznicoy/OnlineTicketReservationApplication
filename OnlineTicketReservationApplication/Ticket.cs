@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,21 +17,23 @@ namespace OnlineTicketReservationApplication
         public DateTime ReturnDateTime { get; private set; } //Date of Return for a Round Trip Ticket
         public int TicketPrice { get; private set; }
         public int TicketQuantity { get; private set; }
-        public Ticket(string ticketType, string ticketClass, string flightOrigin, string flightDestination, DateTime departureDateTime, DateTime returnDateTime, int ticketPrice, int ticketQuantity)
+        public bool isOneWay { get; private set; }
+        public Ticket(string ticketType, string ticketClass, string flightOrigin, string flightDestination, int ticketPrice, int ticketQuantity)
         {
             this.TicketType = ticketType;
             this.TicketClass = ticketClass;
             this.FlightOrigin = flightOrigin;
             this.FlightDestination = flightDestination;
-            this.DepartureDateTime = departureDateTime;
-            this.ReturnDateTime = returnDateTime;
+            this.DepartureDateTime = default(DateTime);
+            this.ReturnDateTime = default(DateTime);
             this.TicketPrice = ticketPrice;
             this.TicketQuantity = ticketQuantity;
+            this.isOneWay = false;
         }
 
         public override string ToString()
         {
-            return this.TicketType + '\n' + this.TicketClass + '\n' + this.FlightOrigin + '\n' + this.FlightDestination + '\n' + this.DepartureDateTime + '\n' + this.ReturnDateTime + '\n' + this.TicketPrice + '\n' + this.TicketQuantity + '\n';
+            return this.TicketType + '\n' + this.TicketClass + '\n' + this.FlightOrigin + '\n' + this.FlightDestination + '\n' + this.TicketPrice + '\n' + this.TicketQuantity + '\n';
         }
     }
 }
