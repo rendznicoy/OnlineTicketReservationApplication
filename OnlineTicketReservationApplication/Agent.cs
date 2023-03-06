@@ -18,9 +18,13 @@ namespace OnlineTicketReservationApplication
             this.ContactNumber = contactNumber;
         }
 
-        public void AddTicket()
+        public bool AddTicket(Ticket ticket)
         {
-
+            if (this.Ticket.Count != Ticket.MaxTicketCapacity())
+            {
+                Ticket.Add(ticket);
+                return true;
+            }
         }
 
         public override string ToString()

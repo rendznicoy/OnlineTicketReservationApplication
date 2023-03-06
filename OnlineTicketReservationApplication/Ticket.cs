@@ -18,7 +18,8 @@ namespace OnlineTicketReservationApplication
         public int TicketPrice { get; private set; }
         public int TicketQuantity { get; private set; }
         public bool isOneWay { get; private set; }
-        public Ticket(string ticketType, string ticketClass, string flightOrigin, string flightDestination, int ticketPrice, int ticketQuantity)
+        private int MaxTicketCapacity;
+        public Ticket(string ticketType, string ticketClass, string flightOrigin, string flightDestination, int ticketPrice, int ticketQuantity, int maxTicketCapacity)
         {
             this.TicketType = ticketType;
             this.TicketClass = ticketClass;
@@ -29,6 +30,15 @@ namespace OnlineTicketReservationApplication
             this.TicketPrice = ticketPrice;
             this.TicketQuantity = ticketQuantity;
             this.isOneWay = false;
+            this.MaxTicketCapacity = maxTicketCapacity;
+        }
+
+        public bool isOneWay()
+        {
+            if(this.TicketType == "One-Way")
+            {
+                return true;
+            }
         }
 
         public override string ToString()
