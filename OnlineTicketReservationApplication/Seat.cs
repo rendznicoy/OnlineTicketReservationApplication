@@ -8,6 +8,7 @@ namespace OnlineTicketReservationApplication
 {
     public class Seat
     {
+        public Passenger Passenger { get; set; }    
         public int SeatNumber { get; private set; }
         public string SeatClass { get; private set; } //Economy Class, Comfort Class, Business Class
         public string SeatPosition { get; private set; } //Window, Aisle
@@ -19,8 +20,9 @@ namespace OnlineTicketReservationApplication
             this.SeatPosition = seatPosition;
         }
 
-        public override string ToString() 
+        public override string ToString()
         {
             return this.SeatNumber + '\n' + this.SeatClass + '\n' + this.SeatPosition + '\n';
         }
     }
+}

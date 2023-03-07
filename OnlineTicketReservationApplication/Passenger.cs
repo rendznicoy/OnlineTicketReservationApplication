@@ -15,7 +15,6 @@ namespace OnlineTicketReservationApplication
         public int ContactNumber { get; private set; }
         public double LoyaltyPoints { get; private set; }
         public int TicketCount { get; private set; }
-        public bool HasTicket { get; private set; }
 
         public Passenger(string name, string email, string address, DateTime birthDate, int contactNumber)
         {
@@ -26,28 +25,25 @@ namespace OnlineTicketReservationApplication
             this.ContactNumber = contactNumber;
             this.LoyaltyPoints = 0;
             this.TicketCount = 0;
-            this.HasTicket = false;
         }
 
-        public bool BuyTicket()
+        public void BuyTicket()
         {
-            if(this.TicketCount < Ticket.MaxTicketCapacity())
-            {
-                this.TicketCount++;
-                return true;
-            }
+            this.TicketCount++;
         }
 
         public bool HasTicket()
         {
-            if(this.TicketCount > 0)
+            if (this.TicketCount > 0)
             {
                 return true;
             }
+            return false;
         }
 
-        public override string toString()
+        public override string ToString()
         {
             return this.Name + '\n' + this.Email + '\n' + this.Address + '\n' + this.BirthDate + '\n' + this.ContactNumber + '\n';
         }
     }
+}

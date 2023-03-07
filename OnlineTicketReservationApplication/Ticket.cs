@@ -9,6 +9,8 @@ namespace OnlineTicketReservationApplication
 {
     public class Ticket
     {
+        public List<Passenger> Passenger { get; private set; }
+        public List<Airplane> Airplane { get; private set; }
         public string TicketType { get; private set; } //Round Trip, One-way, Multi-City
         public string TicketClass { get; private set; } //Economy Class, Comfort Class, Business Class
         public string FlightOrigin { get; private set; } //From
@@ -17,10 +19,10 @@ namespace OnlineTicketReservationApplication
         public DateTime ReturnDateTime { get; private set; } //Date of Return for a Round Trip Ticket
         public int TicketPrice { get; private set; }
         public int TicketQuantity { get; private set; }
-        public bool isOneWay { get; private set; }
-        private int MaxTicketCapacity;
-        public Ticket(string ticketType, string ticketClass, string flightOrigin, string flightDestination, int ticketPrice, int ticketQuantity, int maxTicketCapacity)
+        public Ticket(string ticketType, string ticketClass, string flightOrigin, string flightDestination, int ticketPrice, int ticketQuantity)
         {
+            this.Passenger = new List<Passenger>();
+            this.Airplane = new List<Airplane>();
             this.TicketType = ticketType;
             this.TicketClass = ticketClass;
             this.FlightOrigin = flightOrigin;
@@ -29,8 +31,6 @@ namespace OnlineTicketReservationApplication
             this.ReturnDateTime = default(DateTime);
             this.TicketPrice = ticketPrice;
             this.TicketQuantity = ticketQuantity;
-            this.isOneWay = false;
-            this.MaxTicketCapacity = maxTicketCapacity;
         }
 
         public bool isOneWay()
@@ -39,6 +39,7 @@ namespace OnlineTicketReservationApplication
             {
                 return true;
             }
+            return false;
         }
 
         public override string ToString()

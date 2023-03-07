@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="OnlineTicketReservationApplication.Airplane">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAABEAAAAAAAQEAAAAQAAAAAAAAAEAQAAAAAAAIAA=</HashCode>
+      <FileName>Airplane.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Passenger" />
+      <Property Name="Seat" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="OnlineTicketReservationApplication.Passenger">
+    <Position X="4.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAFAAADAAAAAEAAAAAAQAAAAAAAACAAAAAAiAAAA=</HashCode>
+      <FileName>Passenger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnlineTicketReservationApplication.Seat">
+    <Position X="7.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAEAAAAAEAAAAIAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Seat.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Passenger" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="OnlineTicketReservationApplication.Ticket">
+    <Position X="9.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEgAAAEAAoAhAAAAAAAYAAAACAAAAAAIAA=</HashCode>
+      <FileName>Ticket.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Airplane" />
+      <Property Name="Passenger" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
